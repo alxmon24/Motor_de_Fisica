@@ -8,7 +8,7 @@ public class ObjetoTiroParabolico extends Objeto{
 	public double masa = 1;
 	
 	public ObjetoTiroParabolico(double x, double y, double radio) {
-		super(x,y, radio*2, radio*2);
+		super(x,y, radio, radio);
 		if(radio>0) {
 			this.radio = radio;
 		}

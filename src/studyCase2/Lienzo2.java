@@ -9,8 +9,8 @@ import javax.swing.JPanel;
 
 public class Lienzo2 extends JPanel{
 	ObjetoTiroParabolico jugador = new ObjetoTiroParabolico(50,370,20);
-	Pared muro = new Pared(500,100,100,300);
-	Pared suelo = new Pared(0,400,844,50);
+	Obstaculo muro = new Obstaculo(500,100,100,300);
+	Obstaculo suelo = new Obstaculo(0,400,844,50);
 	double gravedad = 980;
 	private int diametro = 40;
 	protected double dt = 0.25;	
