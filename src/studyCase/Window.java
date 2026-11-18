@@ -17,6 +17,8 @@ public class Window extends JFrame{
 		c.add(Lienzo);
 		setVisible(true);
 		Lienzo.startAnimation();
+		Musica musica = new Musica();
+		musica.reproducir();
 		
 		Lienzo.addMouseListener(new MouseAdapter() {
 			@Override
