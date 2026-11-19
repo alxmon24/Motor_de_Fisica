@@ -18,6 +18,12 @@ public class Window extends JFrame{
 		Container c = getContentPane();
 		c.add(Lienzo);
 		setVisible(true);
+
+		//Iniciar la musica del videojuego
+		Musica musica = new Musica();
+		Lienzo.musica = musica;
+		musica.reproducir();
+
 		Lienzo.startAnimation();
 		
 		Lienzo.addMouseListener(new MouseAdapter() {
@@ -36,11 +42,9 @@ public class Window extends JFrame{
 				int code = e.getKeyCode();
 				if(code == KeyEvent.VK_SPACE && Lienzo.cube.Vy == 0) {
 					Lienzo.cube.saltar();
-					if(Lienzo.animando == false) {
-						Lienzo.reiniciar();
 					}
+				else if(Lienzo.animando == false) Lienzo.reiniciar();
 				}
-			}
 		});
 		
 

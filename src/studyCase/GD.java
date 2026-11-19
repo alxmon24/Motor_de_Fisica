@@ -20,6 +20,7 @@ public class GD extends JPanel{
 			new Obstaculo(840,390,2,2)
 	};
 	public boolean animando = true;
+	public Musica musica;
 	private Formas forma = Formas.CUBO;
 	private int fondoX = 0;
 	private int velocidadFondo = 6;
@@ -85,6 +86,11 @@ public class GD extends JPanel{
 		for(Objeto p: pincho) {
 			if(Colision.estadoColision(cube, p)) {
 				animando = false;
+
+				//Detener la musica cuando el jugador pierde
+				if (musica != null) {
+					musica.detener();
+				}
 			}
 		}
 		
@@ -111,6 +117,12 @@ public class GD extends JPanel{
 				new Obstaculo(800, 390, 2,10),
 				new Obstaculo(840,390,2,10)
 		};
+
+		//Reiniciar la musica cuando comienza otra partida
+		if (musica != null) {
+			musica.reproducir();
+		}
+
 		startAnimation();
 	}
 }
