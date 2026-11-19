@@ -16,6 +16,12 @@ public class Window extends JFrame{
 		Container c = getContentPane();
 		c.add(Lienzo);
 		setVisible(true);
+
+		//Iniciar la musica del videojuego
+		Musica musica = new Musica();
+		Lienzo.musica = musica;
+		musica.reproducir();
+
 		Lienzo.startAnimation();
 		
 		Lienzo.addMouseListener(new MouseAdapter() {
