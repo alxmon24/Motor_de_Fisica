@@ -4,7 +4,9 @@ import java.awt.Container;
 import javax.swing.JFrame;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-
+import java.awt.event.KeyListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyAdapter;
 public class Window extends JFrame{
 	private GD Lienzo = new GD();
 	public Window() {
@@ -25,6 +27,18 @@ public class Window extends JFrame{
 				if(Lienzo.cube.Vy == 0) {Lienzo.cube.saltar();}
 				else if(Lienzo.animando == false) {
 					Lienzo.reiniciar();
+				}
+			}
+		});
+		addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyPressed(KeyEvent e) {
+				int code = e.getKeyCode();
+				if(code == KeyEvent.VK_SPACE && Lienzo.cube.Vy == 0) {
+					Lienzo.cube.saltar();
+					if(Lienzo.animando == false) {
+						Lienzo.reiniciar();
+					}
 				}
 			}
 		});

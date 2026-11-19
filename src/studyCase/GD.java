@@ -16,7 +16,8 @@ public class GD extends JPanel{
 			new Obstaculo(0,410,1200,2)
 	};
 	private Obstaculo pincho[] = {
-			new Obstaculo(800, 390, 5,10)
+			new Obstaculo(800, 390, 2,2),
+			new Obstaculo(840,390,2,2)
 	};
 	public boolean animando = true;
 	private Formas forma = Formas.CUBO;
@@ -47,6 +48,7 @@ public class GD extends JPanel{
 		g.drawImage(imgCubo, (int)cube.x,(int)cube.y,80,80,null);
 		for(Objeto p : pincho) {
 			g.drawImage(imgPincho, (int)p.x-15, (int)p.y-20, 40,40,null );
+
 		}
 		
 		if(forma == Formas.CUBO || forma == Formas.ROBOT) {
@@ -106,7 +108,8 @@ public class GD extends JPanel{
 		fondoX = 0;
 		animando = true;
 		pincho = new Obstaculo[] {
-				new Obstaculo(800, 390, 5,10)
+				new Obstaculo(800, 390, 2,10),
+				new Obstaculo(840,390,2,10)
 		};
 		startAnimation();
 	}

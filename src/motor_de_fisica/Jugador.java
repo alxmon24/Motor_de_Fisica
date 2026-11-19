@@ -5,7 +5,7 @@ public class Jugador extends ObjetoTiroParabolico{ //nos vamos a basar en la for
 		super(x,y,width);
 	}
 	public void saltar() {
-		super.Vy = -25;
+		super.Vy = -30;
 	}
 	@Override
 	public void actualizarFisica(double dt) {
